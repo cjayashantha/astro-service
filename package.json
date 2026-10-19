@@ -1,0 +1,20 @@
+{
+  "name": "eph-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0",
+    "geo-tz": "^8.1.10",
+    "suncalc": "^2.1.1",
+    "swisseph": "^0.5.17"
+  }
+}
