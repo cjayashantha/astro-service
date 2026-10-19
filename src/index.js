@@ -2,6 +2,7 @@
 
 const express = require('express');
 const ephemerisRouter = require('./routes/ephemeris');
+const { requireClient } = require('./middleware/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,8 +15,8 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Ephemeris route
-app.use('/api/ephemeris', ephemerisRouter);
+// Ephemeris route (requires x-client-id / x-client-secret headers)
+app.use('/api/ephemeris', requireClient, ephemerisRouter);
 
 // 404 handler
 app.use((_req, res) => {
