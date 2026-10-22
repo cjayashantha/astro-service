@@ -6,15 +6,23 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js",
+    "check": "node src/check.js",
+    "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20 <21"
+  },
   "dependencies": {
     "express": "^5.3.0",
     "geo-tz": "^8.1.10",
     "suncalc": "^2.1.1",
     "swisseph": "^0.5.17"
+  },
+  "overrides": {
+    "node-gyp": "^11.5.0"
   }
 }
